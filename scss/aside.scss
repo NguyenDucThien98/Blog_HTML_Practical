@@ -1,0 +1,106 @@
+.aside {
+  .search {
+    position: relative;
+    input {
+      width: 100%;
+      height: 40px;
+      border: 1px solid lightgray;
+      outline: none;
+      color: $fontColor;
+      padding-left: 15px;
+      padding-right: 40px;
+      position: relative;
+      transition: all 0.5s ease;
+      &:focus {
+        border-bottom: 2px solid $mainColor;
+      }
+    }
+    .search-btn {
+      position: absolute;
+      display: inline-block;
+      right: 0px;
+      top: 0px;
+      width: 40px;
+      height: 40px;
+      color: $mainColor;
+    }
+  }
+  .aside-item {
+    margin-top: 40px;
+    .aside-item-name {
+      font-weight: 700;
+      line-height: 2;
+      text-transform: uppercase;
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 20%;
+        border-bottom: 2px solid $mainColor;
+        transition: all 0.5s ease;
+      }
+    }
+    .list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: block;
+        a {
+          color: $fontColor;
+        }
+        &::after {
+          content: "";
+          display: block;
+          margin: 10px 0px;
+          width: 100%;
+          border-bottom: 1px solid $fontColor;
+        }
+      }
+    }
+    .post-item {
+      margin-top: 20px;
+      transition: transform 0.5s ease;
+      overflow: hidden;
+      .post-item-name {
+        font-size: 20px;
+      }
+      .post-item-info {
+        @include flex;
+        font-size: 14px;
+        justify-content: space-between;
+        color: $fontColor;
+      }
+      &:hover {
+        border-radius: 15px;
+        border: 1px solid transparent;
+        box-shadow: 0 0 15px 5px rgba($color: #000000, $alpha: 0.2);
+        transform: scale(1.2);
+        .post-item-img {
+          transition: transform 0.5s ease;
+          transform: scale(1.2) translateX(-15px);
+        }
+      }
+    }
+    .tag-content {
+      @include flex;
+      a {
+        //margin: 15px 15px 0 15px;
+        margin: 10px 10px 0 0;
+        display: block;
+        padding: 5px 15px;
+        border: 1px solid $fontColor;
+        border-radius: 15px;
+        color: $fontColor;
+        transition: all 0.5s ease;
+        &:hover {
+          box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}

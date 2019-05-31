@@ -1,0 +1,98 @@
+footer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)),
+    url("../img/mountain.jpg");
+  @include paralax;
+  height: 400px;
+  color: white;
+  position: relative;
+  .footer-content {
+    padding-top: 80px;
+    .footer-item-name {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+    .footer-item-content {
+      padding-top: 30px;
+      margin-bottom: 30px;
+      ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+          a {
+            color: white;
+            &::before {
+              font-family: "Font Awesome 5 Free";
+              content: "\f101";
+              font-weight: 900;
+              margin-right: 0.5em;
+              color: $mainColor;
+            }
+          }
+        }
+      }
+    }
+    .socials {
+      @include socials(white);
+    }
+  }
+  @include logo(30px, 500, $mainColor);
+  .gallery {
+    @include flex;
+    margin: -5px;
+    .image {
+      &[class*="col-"] {
+        padding: 5px;
+      }
+      .expected-ratio {
+        padding-top: 100%;
+        img {
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+        &:hover {
+          transform: scale(1.2);
+          box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  .bot-contact {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: $fontColor;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+
+    .container {
+      @include flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      > p {
+        display: block;
+        margin: 0;
+      }
+      .links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        a {
+          font-size: 13px;
+          display: block;
+          color: white;
+          padding: 5px 15px;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          transition: color 0.3s ease;
+          &:hover {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+  }
+}

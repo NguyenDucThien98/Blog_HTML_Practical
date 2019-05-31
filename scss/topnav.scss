@@ -1,0 +1,38 @@
+.topnav {
+  @include flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  position: relative;
+  z-index: 10;
+  .links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    a {
+      display: block;
+      color: white;
+      padding: 5px 30px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+      &:hover {
+        color: $mainColor;
+      }
+      &.icon {
+        display: none;
+      }
+    }
+    .mobile {
+      position: relative;
+      color: $mainColor;
+      font-size: 35px;
+      margin-right: 30px;
+      &:hover {
+        animation: shake 0.5s ease infinite alternate;
+      }
+    }
+  }
+  @include logo(40px, 700, $mainColor);
+}

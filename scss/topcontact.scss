@@ -1,0 +1,49 @@
+.top-contact {
+  color: $fontColor;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  position: relative;
+  z-index: inherit;
+  .container {
+    @include flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    @include socials($fontColor);
+    .account {
+      @include flex;
+      width: initial;
+
+      i {
+        margin-right: 0.5em;
+      }
+      .search {
+        input {
+          border: 1px solid transparent;
+          border-radius: 15px;
+          padding: 0px 15px;
+          outline: none;
+        }
+        .fa-search {
+          transform: scale(1.5);
+          @include hoverLink();
+        }
+        input {
+          transition: all 0.8s ease;
+          line-height: 1em;
+          width: 0px;
+          padding: 0px;
+          margin: 0px;
+          border: 0px;
+        }
+        &:hover input {
+          //display: inline-block;
+          width: initial;
+          padding: 0px 15px;
+          border: 1px solid transparent;
+          animation: zoom 1s ease;
+        }
+      }
+    }
+  }
+}

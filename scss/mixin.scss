@@ -1,0 +1,58 @@
+@mixin flex {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin hoverLink {
+  transition: color 0.5s ease;
+  &:hover {
+    color: $mainColor;
+  }
+}
+@mixin paralax {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@mixin socials($color) {
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: $color;
+    margin-right: 1em;
+    @include hoverLink();
+  }
+}
+@mixin logo($size, $weight, $color) {
+  a.logo {
+    font-size: $size;
+    font-weight: $weight;
+    line-height: 1em;
+    cursor: pointer;
+    &:hover {
+      color: white !important;
+    }
+    i {
+      color: $color;
+    }
+  }
+}
+@mixin shine($color1, $color2, $skewDeg) {
+  &::before {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    z-index: 2;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, $color1, $color2);
+    transform: skewX($skewDeg);
+  }
+  &:hover::before {
+    animation: shine 0.75s forwards;
+  }
+}

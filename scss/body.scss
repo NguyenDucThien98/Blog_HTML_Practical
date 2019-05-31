@@ -1,0 +1,42 @@
+.body {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .article {
+    margin-bottom: 20px;
+    border: 1px solid rgb(224, 222, 222);
+    border-radius: 15px;
+    transition: all 0.5s ease;
+    &:hover {
+      box-shadow: 0 0 25px 15px rgba($color: #000000, $alpha: 0.2);
+    }
+    .article-info {
+      @include flex;
+      justify-content: space-between;
+      color: $fontColor;
+    }
+    .read-more {
+      color: black !important;
+      &:hover {
+        color: $mainColor !important;
+      }
+      &::after {
+        display: inline-block;
+        position: relative;
+        left: 0.6em;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color: $mainColor;
+        content: "\f101";
+      }
+    }
+    .expected-ratio {
+      transform: translateX(-15px);
+      @include shine(rgba(white, 0), rgba(white, 0.2), -25deg);
+      &:hover {
+        img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
+}
